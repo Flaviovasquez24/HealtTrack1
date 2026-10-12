@@ -12,7 +12,7 @@ app = FastAPI(title="Wearable Stats API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173", "http://3.15.214.222:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
