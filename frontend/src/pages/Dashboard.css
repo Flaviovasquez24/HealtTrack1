@@ -1,0 +1,1310 @@
+/* =====================================
+   DASHBOARD
+===================================== */
+
+.dashboard {
+  padding: 28px 24px 35px;
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+/* =====================================
+   CABECERA DASHBOARD
+===================================== */
+
+.dashboard-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+
+  color: #182235;
+
+  font-size: 25px;
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: -0.7px;
+}
+
+.dashboard-header p {
+  margin: 5px 0 0;
+
+  color: #8993a4;
+
+  font-size: 11px;
+}
+
+.dashboard-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding-top: 4px;
+}
+
+.date-button,
+.filter-button,
+.today-button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  border: 1px solid #edf0f5;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #667286;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.date-button {
+  padding: 8px 10px;
+}
+
+.filter-button {
+  padding: 8px 11px;
+}
+
+.date-button:hover,
+.filter-button:hover,
+.today-button:hover {
+  background: #f8faff;
+}
+
+/* =====================================
+   MÉTRICAS
+===================================== */
+
+.metrics-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 13px;
+
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  position: relative;
+
+  min-height: 118px;
+
+  overflow: hidden;
+
+  padding: 15px 14px 9px;
+
+  border: 1px solid #edf0f5;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 8px rgba(31, 52, 79, 0.025);
+
+  color: #4c74d9;
+}
+
+.metric-card.heart {
+  color: #eb5470;
+}
+
+.metric-card.steps {
+  color: #3271d9;
+}
+
+.metric-card.calories {
+  color: #e9a719;
+}
+
+.metric-card.sleep {
+  color: #913ed2;
+}
+
+.metric-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metric-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #5f6878;
+
+  font-size: 9px;
+}
+
+.metric-icon {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  color: white;
+
+  opacity: 0.95;
+}
+
+.heart .metric-icon {
+  color: #fce7ec;
+}
+
+.heart .metric-icon svg {
+  color: #ed5670;
+}
+
+.steps .metric-icon {
+  color: #e9f0ff;
+}
+
+.steps .metric-icon svg {
+  color: #3271d9;
+}
+
+.calories .metric-icon {
+  color: #fff3d9;
+}
+
+.calories .metric-icon svg {
+  color: #efa719;
+}
+
+.sleep .metric-icon {
+  color: #f2e5fb;
+}
+
+.sleep .metric-icon svg {
+  color: #913ed2;
+}
+
+.metric-change {
+  padding: 3px 5px;
+
+  border-radius: 5px;
+
+  background: #eefbf6;
+
+  color: #31a679;
+
+  font-size: 8px;
+
+  font-weight: 600;
+}
+
+.metric-value {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 4px;
+
+  margin-top: 8px;
+}
+
+.metric-value strong {
+  color: #1b2739;
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+.metric-value span {
+  color: #8993a4;
+
+  font-size: 8px;
+}
+
+.metric-value small {
+  margin-left: 2px;
+
+  color: #8993a4;
+
+  font-size: 8px;
+}
+
+.metric-chart {
+  position: absolute;
+
+  left: 14px;
+  right: 14px;
+  bottom: 5px;
+
+  width: calc(100% - 28px);
+
+  height: 35px;
+}
+
+/* =====================================
+   GRID PRINCIPAL
+===================================== */
+
+.dashboard-main-grid {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.75fr) minmax(260px, 0.85fr);
+
+  gap: 14px;
+
+  margin-bottom: 13px;
+}
+
+.panel {
+  border: 1px solid #edf0f5;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 8px rgba(31, 52, 79, 0.025);
+}
+
+.activity-panel {
+  min-height: 280px;
+
+  padding: 17px 16px 13px;
+}
+
+.device-panel {
+  padding: 17px 15px 13px;
+}
+
+/* =====================================
+   HEADERS DE PANEL
+===================================== */
+
+.panel-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.panel-header h2 {
+  margin: 0;
+
+  color: #253145;
+
+  font-size: 14px;
+
+  line-height: 1.3;
+
+  font-weight: 650;
+}
+
+.panel-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.title-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #2d6ce0;
+}
+
+.today-button {
+  padding: 5px 8px;
+
+  font-size: 9px;
+}
+
+.today-button span {
+  margin-left: 2px;
+}
+
+/* =====================================
+   GRÁFICO
+===================================== */
+
+.activity-chart {
+  position: relative;
+
+  height: 215px;
+
+  margin-top: 8px;
+
+  padding-left: 32px;
+  padding-bottom: 25px;
+}
+
+.activity-chart::before {
+  content: '';
+
+  position: absolute;
+
+  left: 32px;
+  right: 2px;
+  top: 24px;
+
+  height: 1px;
+
+  background: #f0f2f6;
+
+  box-shadow:
+    0 48px #f0f2f6,
+    0 96px #f0f2f6,
+    0 144px #f0f2f6;
+}
+
+.chart-y-labels {
+  position: absolute;
+
+  left: 0;
+  top: 18px;
+  bottom: 34px;
+
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: #9ca4b1;
+
+  font-size: 8px;
+}
+
+.activity-svg {
+  position: absolute;
+
+  left: 32px;
+  right: 2px;
+  top: 10px;
+
+  width: calc(100% - 34px);
+  height: 174px;
+
+  color: #2f6bdc;
+}
+
+.chart-x-labels {
+  position: absolute;
+
+  left: 32px;
+  right: 2px;
+  bottom: 5px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #9099a8;
+
+  font-size: 8px;
+}
+
+.chart-tooltip {
+  position: absolute;
+
+  top: 35px;
+  left: 67%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 7px 9px;
+
+  border-radius: 5px;
+
+  color: white;
+
+  background: #26364d;
+
+  box-shadow: 0 4px 12px rgba(25, 38, 58, 0.2);
+
+  font-size: 8px;
+
+  z-index: 3;
+}
+
+.chart-tooltip::after {
+  content: '';
+
+  position: absolute;
+
+  bottom: -5px;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  transform: translateX(-50%) rotate(45deg);
+
+  background: #26364d;
+}
+
+.chart-tooltip strong,
+.chart-tooltip span {
+  position: relative;
+  z-index: 2;
+}
+
+.chart-tooltip strong {
+  font-size: 8px;
+}
+
+.chart-tooltip span {
+  margin-top: 2px;
+
+  color: #e7edf5;
+}
+
+/* =====================================
+   DISPOSITIVO
+===================================== */
+
+.device-panel .panel-header {
+  align-items: flex-start;
+}
+
+.connected {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 4px 7px;
+
+  border-radius: 9px;
+
+  background: #eafaf5;
+
+  color: #24a67b;
+
+  font-size: 8px;
+
+  font-weight: 600;
+}
+
+.connected i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #20b481;
+}
+
+.device-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  background: #f6f8fc;
+}
+
+/* Reloj */
+
+.watch {
+  width: 53px;
+  height: 69px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #17283d;
+
+  box-shadow:
+    0 0 0 3px #dbe2ec,
+    0 4px 10px rgba(20, 38, 61, 0.18);
+}
+
+.watch-screen {
+  width: 39px;
+  height: 55px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding-top: 5px;
+
+  border-radius: 7px;
+
+  color: white;
+
+  background: #101b2a;
+
+  font-size: 8px;
+}
+
+.watch-screen small {
+  font-size: 6px;
+
+  color: #b9c4d2;
+}
+
+.watch-screen strong {
+  margin-top: 8px;
+
+  color: #ed4e68;
+
+  font-size: 13px;
+}
+
+.watch-screen span {
+  margin-top: 1px;
+
+  font-size: 9px;
+}
+
+.watch-screen div {
+  width: 19px;
+  height: 2px;
+
+  margin-top: 8px;
+
+  border-radius: 3px;
+
+  background: #2469dc;
+}
+
+/* Info dispositivo */
+
+.device-info {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.device-info > strong {
+  color: #263348;
+
+  font-size: 11px;
+
+  font-weight: 650;
+}
+
+.device-info > span {
+  margin-top: 3px;
+
+  color: #8b95a5;
+
+  font-size: 8px;
+}
+
+.battery {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  margin-top: 10px;
+
+  color: #21a77c;
+
+  font-size: 8px;
+
+  font-weight: 600;
+}
+
+.battery span {
+  font-size: 9px;
+}
+
+.battery small {
+  margin-left: 3px;
+
+  color: #8e97a6;
+
+  font-size: 7px;
+
+  font-weight: 400;
+}
+
+.device-details {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 13px;
+
+  padding: 8px 10px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  color: #2c6ddd;
+
+  background: #eef5ff;
+
+  font-size: 8px;
+
+  cursor: pointer;
+}
+
+.device-details span {
+  font-size: 14px;
+}
+
+/* =====================================
+   SINCRONIZACIÓN
+===================================== */
+
+.sync-banner {
+  min-height: 43px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 13px;
+
+  padding: 8px 11px;
+
+  border: 1px solid #e2ebfc;
+
+  border-radius: 8px;
+
+  background: #f0f6ff;
+}
+
+.sync-icon {
+  width: 27px;
+  height: 27px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  color: white;
+
+  background: #2f6ee1;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sync-banner > div:nth-child(2) {
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+
+  min-width: 0;
+
+  flex: 1;
+
+  color: #63718a;
+
+  font-size: 8px;
+}
+
+.sync-banner strong {
+  color: #2763c8;
+
+  font-weight: 650;
+}
+
+.sync-banner button {
+  padding: 5px 9px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  color: #6e7888;
+
+  background: white;
+
+  font-size: 7px;
+
+  cursor: pointer;
+}
+
+/* =====================================
+   ACCESOS RÁPIDOS
+===================================== */
+
+.quick-panel {
+  padding: 15px 16px 14px;
+}
+
+.quick-symbol {
+  color: #596578;
+
+  font-size: 17px;
+}
+
+.quick-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 10px;
+
+  margin-top: 13px;
+}
+
+.quick-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 0;
+
+  padding: 9px;
+
+  border: 1px solid #f0f2f6;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.15s ease;
+}
+
+.quick-item:hover {
+  border-color: #dce6f7;
+
+  background: #f8faff;
+}
+
+.quick-icon {
+  width: 31px;
+  height: 31px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+.quick-icon.blue {
+  color: #286cdd;
+  background: #eaf2ff;
+}
+
+.quick-icon.cyan {
+  color: #27a7bb;
+  background: #e8fafb;
+}
+
+.quick-icon.purple {
+  color: #9749ce;
+  background: #f4eafa;
+}
+
+.quick-icon.green {
+  color: #27a477;
+  background: #e8f9f3;
+}
+
+.quick-item div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.quick-item strong {
+  overflow: hidden;
+
+  color: #344055;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.quick-item span {
+  overflow: hidden;
+
+  margin-top: 3px;
+
+  color: #949dab;
+
+  font-size: 7px;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+/* =====================================
+   RESPONSIVE DASHBOARD
+===================================== */
+
+@media (max-width: 1050px) {
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+
+  .dashboard {
+    padding: 20px 14px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .dashboard-actions {
+    width: 100%;
+  }
+
+  .date-button {
+    flex: 1;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sync-banner > div:nth-child(2) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =====================================
+   AJUSTE DE ESCALA DEL DASHBOARD
+===================================== */
+
+.dashboard {
+  width: 100%;
+  max-width: 1450px;
+
+  padding: 30px 32px 40px;
+
+  margin: 0 auto;
+}
+
+/* =====================================
+   CABECERA
+===================================== */
+
+.dashboard-header {
+  margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+  font-size: 30px;
+  letter-spacing: -0.8px;
+}
+
+.dashboard-header p {
+  margin-top: 7px;
+
+  font-size: 13px;
+}
+
+/* =====================================
+   BOTONES SUPERIORES
+===================================== */
+
+.date-button,
+.filter-button {
+  font-size: 11px;
+
+  padding: 10px 13px;
+}
+
+/* =====================================
+   TARJETAS DE ESTADÍSTICAS
+===================================== */
+
+.metrics-grid {
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+.metric-card {
+  min-height: 135px;
+
+  padding: 17px 17px 10px;
+
+  border-radius: 10px;
+}
+
+.metric-title {
+  gap: 8px;
+
+  font-size: 11px;
+}
+
+.metric-icon {
+  width: 31px;
+  height: 31px;
+}
+
+.metric-change {
+  padding: 4px 7px;
+
+  font-size: 9px;
+}
+
+.metric-value {
+  margin-top: 10px;
+
+  gap: 5px;
+}
+
+.metric-value strong {
+  font-size: 26px;
+}
+
+.metric-value span,
+.metric-value small {
+  font-size: 9px;
+}
+
+.metric-chart {
+  left: 17px;
+  right: 17px;
+  bottom: 6px;
+
+  width: calc(100% - 34px);
+
+  height: 43px;
+}
+
+/* =====================================
+   PANELES INFERIORES
+===================================== */
+
+.dashboard-main-grid {
+  gap: 15px;
+
+  margin-bottom: 15px;
+}
+
+.activity-panel {
+  min-height: 320px;
+
+  padding: 20px 19px 15px;
+}
+
+.device-panel {
+  padding: 20px 18px 15px;
+}
+
+/* =====================================
+   TÍTULOS DE PANELES
+===================================== */
+
+.panel-header h2 {
+  font-size: 16px;
+}
+
+.title-dot {
+  width: 6px;
+  height: 6px;
+}
+
+.today-button {
+  padding: 7px 10px;
+
+  font-size: 10px;
+}
+
+/* =====================================
+   GRÁFICO DE ACTIVIDAD
+===================================== */
+
+.activity-chart {
+  height: 245px;
+
+  margin-top: 10px;
+
+  padding-left: 38px;
+  padding-bottom: 28px;
+}
+
+.activity-chart::before {
+  left: 38px;
+  right: 2px;
+  top: 25px;
+
+  box-shadow:
+    0 55px #f0f2f6,
+    0 110px #f0f2f6,
+    0 165px #f0f2f6;
+}
+
+.chart-y-labels {
+  left: 0;
+  top: 18px;
+  bottom: 39px;
+
+  font-size: 9px;
+}
+
+.activity-svg {
+  left: 38px;
+  right: 2px;
+  top: 8px;
+
+  width: calc(100% - 40px);
+  height: 195px;
+}
+
+.chart-x-labels {
+  left: 38px;
+  right: 2px;
+  bottom: 5px;
+
+  font-size: 9px;
+}
+
+.chart-tooltip {
+  top: 34px;
+
+  padding: 8px 10px;
+
+  font-size: 9px;
+}
+
+.chart-tooltip strong {
+  font-size: 9px;
+}
+
+.chart-tooltip span {
+  font-size: 8px;
+}
+
+/* =====================================
+   DISPOSITIVO
+===================================== */
+
+.connected {
+  padding: 5px 8px;
+
+  font-size: 9px;
+}
+
+.device-card {
+  gap: 15px;
+
+  margin-top: 20px;
+
+  padding: 15px;
+}
+
+.watch {
+  width: 61px;
+  height: 78px;
+
+  border-radius: 13px;
+}
+
+.watch-screen {
+  width: 45px;
+  height: 63px;
+
+  border-radius: 8px;
+}
+
+.watch-screen small {
+  font-size: 7px;
+}
+
+.watch-screen strong {
+  margin-top: 9px;
+
+  font-size: 15px;
+}
+
+.watch-screen span {
+  font-size: 10px;
+}
+
+.device-info > strong {
+  font-size: 13px;
+}
+
+.device-info > span {
+  margin-top: 4px;
+
+  font-size: 9px;
+}
+
+.battery {
+  margin-top: 11px;
+
+  font-size: 9px;
+}
+
+.battery small {
+  font-size: 8px;
+}
+
+.device-details {
+  margin-top: 15px;
+
+  padding: 10px 12px;
+
+  font-size: 9px;
+}
+
+/* =====================================
+   SINCRONIZACIÓN
+===================================== */
+
+.sync-banner {
+  min-height: 50px;
+
+  gap: 11px;
+
+  margin-bottom: 15px;
+
+  padding: 9px 12px;
+}
+
+.sync-icon {
+  width: 31px;
+  height: 31px;
+
+  font-size: 12px;
+}
+
+.sync-banner > div:nth-child(2) {
+  font-size: 9px;
+}
+
+.sync-banner button {
+  padding: 6px 11px;
+
+  font-size: 8px;
+}
+
+/* =====================================
+   ACCESOS RÁPIDOS
+===================================== */
+
+.quick-panel {
+  padding: 18px 19px 17px;
+}
+
+.quick-grid {
+  gap: 12px;
+
+  margin-top: 15px;
+}
+
+.quick-item {
+  gap: 11px;
+
+  padding: 11px;
+
+  min-height: 55px;
+}
+
+.quick-icon {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 9px;
+
+  font-size: 15px;
+}
+
+.quick-item strong {
+  font-size: 9px;
+}
+
+.quick-item span {
+  margin-top: 4px;
+
+  font-size: 8px;
+}

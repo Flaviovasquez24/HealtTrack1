@@ -1,0 +1,902 @@
+/* =====================================
+   HISTORIAL
+===================================== */
+
+.hist {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 24px 32px 40px;
+}
+
+.hist button {
+  font-family: inherit;
+}
+
+.hist-card {
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(31, 52, 79, 0.025);
+}
+
+/* ---------- Cabecera ---------- */
+
+.hist-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.hist-crumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  color: #8993a4;
+  font-size: 10.5px;
+}
+
+.hist-crumbs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #667286;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.hist-crumbs button:hover {
+  color: #2867df;
+}
+
+.hist-head h1 {
+  margin: 0;
+  color: #182235;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+}
+
+.hist-head p {
+  max-width: 520px;
+  margin: 7px 0 0;
+  color: #8993a4;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.hist-head-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.hist-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 1px solid #e3e8f1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3b475c;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.hist-btn:hover {
+  background: #f8faff;
+}
+
+.hist-btn.primary {
+  border-color: transparent;
+  color: #ffffff;
+  background: #2867df;
+  box-shadow: 0 4px 10px rgba(40, 103, 223, 0.25);
+}
+
+.hist-btn.primary:hover {
+  background: #1f57c4;
+}
+
+.hist-btn.soft {
+  border-color: transparent;
+  background: #eef2fb;
+  color: #34425c;
+}
+
+.hist-btn.soft:hover {
+  background: #e4eaf8;
+}
+
+/* ---------- Tarjetas de resumen ---------- */
+
+.hist-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+.hist-summary {
+  padding: 15px 18px;
+}
+
+.hist-summary-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.hist-summary-label {
+  color: #667286;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hist-summary-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.tone-blue { color: #2867df; background: #e8effd; }
+.tone-orange { color: #e0533d; background: #fdece8; }
+.tone-red { color: #d5384f; background: #fdeaee; }
+
+.hist-summary-value {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin: 2px 0 8px;
+}
+
+.hist-summary-value strong {
+  color: #182235;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.hist-summary-value span {
+  color: #8993a4;
+  font-size: 11px;
+}
+
+.hist-summary-foot {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #24a67b;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.hist-summary-foot.neutral {
+  color: #667286;
+  font-weight: 500;
+}
+
+/* ---------- Filtros ---------- */
+
+.hist-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+}
+
+.hist-search {
+  display: flex;
+  flex: 1 1 240px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  border-radius: 8px;
+  background: #f3f6fb;
+  color: #8993a4;
+}
+
+.hist-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #253147;
+  font: inherit;
+  font-size: 11.5px;
+}
+
+.hist-search input::placeholder {
+  color: #8993a4;
+}
+
+.hist-search:focus-within {
+  box-shadow: 0 0 0 2px rgba(40, 103, 223, 0.25);
+}
+
+.hist-filter-btn,
+.hist-select select {
+  height: 36px;
+  border: 0;
+  border-radius: 8px;
+  background: #f3f6fb;
+  color: #3b475c;
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 500;
+}
+
+.hist-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.hist-filter-btn:hover {
+  background: #eaeff8;
+}
+
+.hist-select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: #667286;
+}
+
+.hist-select select {
+  padding: 0 32px 0 12px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.hist-select svg {
+  position: absolute;
+  right: 11px;
+  pointer-events: none;
+}
+
+.hist-icon-btn {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #667286;
+  cursor: pointer;
+}
+
+.hist-icon-btn:hover:not(:disabled) {
+  background: #f3f6fb;
+  color: #2867df;
+}
+
+.hist-icon-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* ---------- Layout tabla + detalle ---------- */
+
+.hist-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: start;
+  gap: 16px;
+}
+
+/* ---------- Tabla ---------- */
+
+.hist-table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px 14px;
+}
+
+.hist-table-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hist-table-title h2 {
+  margin: 0;
+  color: #182235;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hist-count {
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: #e8effd;
+  color: #2867df;
+  font-size: 9.5px;
+  font-weight: 700;
+}
+
+.hist-sync {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #667286;
+  font-size: 10px;
+}
+
+.hist-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #24b37e;
+}
+
+.hist-table-scroll {
+  overflow-x: auto;
+}
+
+.hist-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hist-table th {
+  padding: 10px 12px;
+  background: #f3f6fb;
+  color: #667286;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hist-table th:first-child,
+.hist-table td:first-child {
+  padding-left: 18px;
+}
+
+.hist-table td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #edf0f5;
+  color: #253147;
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+.hist-table tbody tr {
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.hist-table tbody tr:hover {
+  background: #f8faff;
+}
+
+.hist-table tbody tr:focus-visible {
+  outline: 2px solid #2867df;
+  outline-offset: -2px;
+}
+
+.hist-table tbody tr.is-selected {
+  background: #f1f6ff;
+}
+
+.hist-table tbody tr.is-selected td:first-child {
+  box-shadow: inset 3px 0 0 #2867df;
+}
+
+.hist-table tr.hist-empty {
+  cursor: default;
+}
+
+.hist-table tr.hist-empty:hover {
+  background: transparent;
+}
+
+.hist-table tr.hist-empty td {
+  padding: 40px 18px;
+  color: #8993a4;
+  text-align: center;
+}
+
+.hist-date {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px 7px;
+  min-width: 96px;
+  font-weight: 600;
+}
+
+.hist-tag {
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #e8effd;
+  color: #2f5fd0;
+  font-size: 8.5px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.hist-time {
+  color: #667286;
+  white-space: nowrap;
+}
+
+.hist-activity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 180px;
+}
+
+.hist-activity strong {
+  display: block;
+  color: #182235;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.hist-activity span {
+  display: block;
+  margin-top: 2px;
+  color: #8993a4;
+  font-size: 9.5px;
+}
+
+.hist-type-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 8px;
+  background: #e8effd;
+  color: #2867df;
+}
+
+.hist-type-icon.lg {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.hist-steps {
+  min-width: 70px;
+}
+
+.hist-steps strong {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.hist-bar {
+  width: 56px;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #e8edf6;
+}
+
+.hist-bar i {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: #2867df;
+}
+
+.hist-bar i.high {
+  background: #0c8a4f;
+}
+
+.hist-muted {
+  color: #a3acba;
+}
+
+.hist-kcal {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #d5384f;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hist-kcal.muted {
+  color: #667286;
+  font-weight: 500;
+}
+
+.hist-bpm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hist-bpm span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hist-bpm svg {
+  color: #d5384f;
+}
+
+.hist-zone {
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 8.5px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.zone-reposo { color: #1f8f6b; background: #e2f6ee; }
+.zone-profundo { color: #4a4fc4; background: #e9eafb; }
+.zone-cardio { color: #2867df; background: #e3ecfd; }
+
+/* ---------- Paginación ---------- */
+
+.hist-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 14px 18px 16px;
+  color: #667286;
+  font-size: 10px;
+}
+
+.hist-showing {
+  max-width: 130px;
+  line-height: 1.45;
+}
+
+.hist-showing strong {
+  color: #182235;
+}
+
+.hist-rows {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hist-rows select {
+  height: 28px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 6px;
+  background: #f3f6fb;
+  color: #253147;
+  font: inherit;
+  font-size: 10.5px;
+  cursor: pointer;
+}
+
+.hist-pages {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.hist-page,
+.hist-page-nav {
+  border: 0;
+  background: transparent;
+  color: #3b475c;
+  font-size: 10.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hist-page {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.hist-page:hover:not(.active) {
+  background: #f3f6fb;
+}
+
+.hist-page.active {
+  color: #ffffff;
+  background: #2867df;
+}
+
+.hist-page-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  height: 28px;
+}
+
+.hist-page-nav:disabled {
+  color: #a3acba;
+  cursor: default;
+}
+
+.hist-ellipsis {
+  padding: 0 4px;
+  color: #a3acba;
+}
+
+/* ---------- Panel de detalle ---------- */
+
+.hist-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hist-detail {
+  padding: 16px;
+}
+
+.hist-detail-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.hist-chip {
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: #e2f6ee;
+  color: #1f8f6b;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hist-detail-top .hist-icon-btn {
+  width: 28px;
+  height: 28px;
+}
+
+.hist-detail-title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 14px;
+}
+
+.hist-detail-title h3 {
+  margin: 0;
+  color: #182235;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.hist-detail-title span {
+  display: block;
+  margin-top: 3px;
+  color: #8993a4;
+  font-size: 10px;
+}
+
+.hist-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  background: #f3f6fb;
+}
+
+.hist-metrics span {
+  display: block;
+  margin-bottom: 4px;
+  color: #667286;
+  font-size: 9.5px;
+}
+
+.hist-metrics strong {
+  color: #182235;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.hist-metrics strong.hot {
+  color: #d5384f;
+}
+
+.hist-metrics small {
+  color: #667286;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.hist-curve-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 10px;
+}
+
+.hist-curve-head strong {
+  color: #253147;
+  font-weight: 600;
+}
+
+.hist-curve-head span {
+  color: #8993a4;
+}
+
+.hist-curve {
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f3f6fb;
+}
+
+.hist-curve svg {
+  display: block;
+  width: 100%;
+  height: 96px;
+}
+
+.hist-curve-axis {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin: 6px 0 14px;
+  color: #8993a4;
+  font-size: 8.5px;
+}
+
+.hist-device {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  background: #f3f6fb;
+  color: #2867df;
+}
+
+.hist-device div {
+  flex: 1;
+}
+
+.hist-device strong {
+  display: block;
+  color: #182235;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.hist-device span {
+  display: block;
+  margin-top: 2px;
+  color: #667286;
+  font-size: 9px;
+}
+
+.hist-detail-actions {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 8px;
+}
+
+.hist-detail-actions .hist-btn {
+  padding: 11px 8px;
+  font-size: 10.5px;
+}
+
+.hist-tip {
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid #d6e3fa;
+  border-radius: 10px;
+  background: #e6effd;
+  color: #2867df;
+}
+
+.hist-tip svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.hist-tip strong {
+  display: block;
+  color: #1f4fa8;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.hist-tip p {
+  margin: 4px 0 0;
+  color: #3d5680;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1250px) {
+  .hist-main {
+    grid-template-columns: 1fr;
+  }
+
+  .hist-side {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+@media (max-width: 900px) {
+  .hist {
+    padding: 20px 16px 32px;
+  }
+
+  .hist-head {
+    flex-direction: column;
+  }
+
+  .hist-head-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hist-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hist-side {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .hist-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hist-pages {
+    margin-left: 0;
+  }
+}

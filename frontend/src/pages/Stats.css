@@ -1,0 +1,1003 @@
+/* =====================================
+   ESTADÍSTICAS
+===================================== */
+
+.estadisticas {
+  width: 100%;
+  max-width: 1450px;
+
+  padding: 30px 32px 40px;
+
+  margin: 0 auto;
+}
+
+/* =====================================
+   CABECERA
+===================================== */
+
+.estadisticas-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 26px;
+}
+
+.estadisticas-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.estadisticas-title h1 {
+  margin: 0;
+
+  color: #182235;
+
+  font-size: 26px;
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: -0.7px;
+}
+
+.device-badge {
+  padding: 4px 9px;
+
+  border-radius: 20px;
+
+  background: #eef2fb;
+
+  color: #55607a;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.estadisticas-header p {
+  max-width: 520px;
+
+  margin: 7px 0 0;
+
+  color: #8993a4;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.estadisticas-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  flex-wrap: wrap;
+
+  padding-top: 3px;
+}
+
+.period-pills {
+  display: flex;
+
+  align-items: center;
+
+  padding: 3px;
+
+  border: 1px solid #edf0f5;
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+.period-pill {
+  border: 0;
+
+  padding: 7px 11px;
+
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #667286;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.period-pill.active {
+  color: #ffffff;
+  background: #2867df;
+}
+
+.date-button,
+.export-button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  border: 1px solid #edf0f5;
+  border-radius: 8px;
+
+  padding: 9px 12px;
+
+  background: #ffffff;
+
+  color: #667286;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.export-button {
+  border: none;
+
+  color: #ffffff;
+  background: #2867df;
+
+  box-shadow: 0 4px 10px rgba(40, 103, 223, 0.25);
+}
+
+.date-button:hover {
+  background: #f8faff;
+}
+
+.export-button:hover {
+  background: #1f57c4;
+}
+
+/* =====================================
+   TARJETAS DE RESUMEN
+===================================== */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  position: relative;
+
+  padding: 15px 16px;
+
+  border: 1px solid #edf0f5;
+  border-left: 3px solid transparent;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 8px rgba(31, 52, 79, 0.025);
+}
+
+.stat-card.heart { border-left-color: #eb5470; }
+.stat-card.steps { border-left-color: #3271d9; }
+.stat-card.calories { border-left-color: #e9a719; }
+.stat-card.sleep { border-left-color: #913ed2; }
+
+.stat-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.heart .stat-icon { background: #fce7ec; color: #ed5670; }
+.steps .stat-icon { background: #e9f0ff; color: #3271d9; }
+.calories .stat-icon { background: #fff3d9; color: #efa719; }
+.sleep .stat-icon { background: #f2e5fb; color: #913ed2; }
+
+.stat-badge {
+  padding: 3px 7px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.badge-red { color: #d5384f; background: #fdeaee; }
+.badge-green { color: #24a67b; background: #eafaf5; }
+.badge-gray { color: #667286; background: #f1f3f7; }
+
+.stat-value {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+
+  margin-top: 12px;
+}
+
+.stat-value strong {
+  color: #1b2739;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.stat-value span {
+  color: #8993a4;
+
+  font-size: 10px;
+}
+
+.stat-label {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #667286;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =====================================
+   PANEL RITMO CARDÍACO
+===================================== */
+
+.hr-panel {
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+
+  padding: 20px 20px 8px;
+
+  margin-bottom: 15px;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 8px rgba(31, 52, 79, 0.025);
+}
+
+.hr-panel-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.hr-panel-header .panel-title {
+  align-items: flex-start;
+}
+
+.hr-panel-icon {
+  width: 30px;
+  height: 30px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fce7ec;
+
+  color: #ed5670;
+}
+
+.hr-panel-title-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.hr-panel-title-row h2 {
+  margin: 0;
+
+  color: #253145;
+
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.badge {
+  padding: 3px 8px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.badge-green-outline {
+  color: #24a67b;
+
+  background: #eafaf5;
+
+  border: 1px solid #cdeee1;
+}
+
+.hr-panel-sub {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #8993a4;
+
+  font-size: 10px;
+}
+
+.hr-panel-controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+.view-toggle {
+  border: 1px solid #edf0f5;
+  border-radius: 7px;
+
+  padding: 7px 10px;
+
+  background: #ffffff;
+
+  color: #667286;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.view-toggle.active {
+  color: #2867df;
+
+  background: #eef4ff;
+  border-color: #d8e6fc;
+}
+
+.kebab-button {
+  width: 28px;
+  height: 28px;
+
+  border: 1px solid #edf0f5;
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #8993a4;
+
+  cursor: pointer;
+}
+
+/* =====================================
+   GRÁFICO RITMO CARDÍACO
+===================================== */
+
+.hr-chart {
+  position: relative;
+
+  height: 235px;
+
+  margin-top: 14px;
+
+  padding-left: 34px;
+  padding-bottom: 26px;
+}
+
+.hr-y-labels {
+  position: absolute;
+
+  left: 0;
+  top: 5px;
+  bottom: 34px;
+
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: #9ca4b1;
+
+  font-size: 9px;
+}
+
+.hr-svg {
+  position: absolute;
+
+  left: 34px;
+  right: 2px;
+  top: 0;
+
+  width: calc(100% - 36px);
+  height: 200px;
+}
+
+.hr-zone-label {
+  fill: #37a980;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.hr-x-labels {
+  position: absolute;
+
+  left: 34px;
+  right: 2px;
+  bottom: 0;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #9099a8;
+
+  font-size: 9px;
+}
+
+.hr-x-today {
+  color: #2867df;
+
+  font-weight: 700;
+}
+
+.hr-tooltip {
+  position: absolute;
+
+  top: 6px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 7px 9px;
+
+  border-radius: 6px;
+
+  color: #ffffff;
+  background: #26364d;
+
+  box-shadow: 0 4px 12px rgba(25, 38, 58, 0.2);
+
+  font-size: 8px;
+
+  white-space: nowrap;
+
+  z-index: 2;
+}
+
+.hr-tooltip strong { font-size: 8px; }
+
+.hr-tooltip span {
+  margin-top: 2px;
+
+  color: #e7edf5;
+}
+
+.hr-tooltip-last {
+  top: auto;
+  bottom: 60px;
+
+  transform: translateX(-88%);
+
+  color: #253145;
+  background: #ffffff;
+
+  border: 1px solid #edf0f5;
+}
+
+.hr-tooltip-last strong { color: #253145; }
+
+.hr-tooltip-last span { color: #667286; }
+
+/* =====================================
+   ESTADÍSTICAS BAJO EL GRÁFICO
+===================================== */
+
+.hr-stats-row {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin: 6px 0 18px;
+}
+
+.hr-stat {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 13px 14px;
+
+  border: 1px solid #edf0f5;
+  border-radius: 8px;
+
+  background: #f8faff;
+}
+
+.hr-stat > span:first-child {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  color: #667286;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.hr-stat strong {
+  margin-top: 7px;
+
+  color: #1b2739;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.hr-stat strong small {
+  color: #8993a4;
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.hr-stat-meta {
+  margin-top: 5px;
+
+  color: #8993a4;
+
+  font-size: 9px;
+}
+
+.hr-stat-meta.good { color: #24a67b; }
+
+/* =====================================
+   PASOS / CALORÍAS / SUEÑO
+===================================== */
+
+.side-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 15px;
+
+  margin-bottom: 15px;
+}
+
+.side-panel {
+  padding: 16px 17px 14px;
+}
+
+.side-panel-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 8px;
+}
+
+.side-panel-header > span:first-child {
+  color: #253145;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.side-panel-value {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.side-panel-value strong {
+  color: #1b2739;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.side-panel-value strong small {
+  color: #8993a4;
+
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.side-panel-value span {
+  margin-top: 2px;
+
+  color: #8993a4;
+
+  font-size: 9px;
+}
+
+.side-panel-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 10px;
+  padding-top: 10px;
+
+  border-top: 1px solid #f0f2f6;
+
+  color: #8993a4;
+
+  font-size: 9px;
+}
+
+.side-panel-footer .up {
+  margin-left: auto;
+
+  color: #24a67b;
+
+  font-weight: 600;
+}
+
+/* Pasos */
+
+.steps-bars {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 8px;
+
+  height: 90px;
+
+  margin-top: 16px;
+}
+
+.steps-bar-col {
+  position: relative;
+
+  display: flex;
+
+  flex: 1;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 6px;
+
+  height: 100%;
+
+  color: #9099a8;
+
+  font-size: 8px;
+}
+
+.steps-bar {
+  width: 100%;
+
+  border-radius: 4px 4px 0 0;
+
+  background: #dbe6fb;
+}
+
+.steps-bar.active {
+  background: #2867df;
+}
+
+.steps-bar-peak {
+  position: absolute;
+
+  top: -14px;
+
+  color: #2867df;
+
+  font-size: 8px;
+  font-weight: 700;
+}
+
+/* Calorías */
+
+.calories-chart {
+  position: relative;
+
+  height: 84px;
+
+  margin-top: 12px;
+
+  color: #e9a719;
+}
+
+.calories-chart svg {
+  width: 100%;
+  height: 100%;
+}
+
+.calories-peak {
+  position: absolute;
+
+  top: -4px;
+  left: 30%;
+
+  padding: 3px 6px;
+
+  border-radius: 5px;
+
+  background: #26364d;
+
+  color: #ffffff;
+
+  font-size: 7px;
+
+  white-space: nowrap;
+
+  z-index: 2;
+}
+
+/* Sueño */
+
+.sleep-bar-label {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 18px;
+
+  font-size: 9px;
+
+  color: #667286;
+}
+
+.sleep-eff {
+  color: #24a67b;
+
+  font-weight: 600;
+}
+
+.sleep-bar {
+  display: flex;
+
+  overflow: hidden;
+
+  height: 12px;
+
+  margin-top: 8px;
+
+  border-radius: 6px;
+}
+
+.sleep-bar-segment {
+  height: 100%;
+}
+
+.sleep-legend {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 10px;
+
+  color: #667286;
+
+  font-size: 8px;
+}
+
+.sleep-legend span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+.sleep-legend i {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 2px;
+}
+
+/* =====================================
+   INSIGHTS
+===================================== */
+
+.insights-banner {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  padding: 16px 18px;
+
+  border: 1px solid #d9f0e6;
+  border-radius: 10px;
+
+  background: #f2fbf7;
+}
+
+.insights-icon {
+  width: 32px;
+  height: 32px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  color: #ffffff;
+  background: #2ab585;
+
+  font-size: 14px;
+}
+
+.insights-copy {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.insights-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.insights-title strong {
+  color: #1b2739;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.insights-copy p {
+  max-width: 720px;
+
+  margin: 6px 0 0;
+
+  color: #56624f;
+
+  color: #4c5b57;
+
+  font-size: 11px;
+
+  line-height: 1.55;
+}
+
+.insights-actions {
+  display: flex;
+
+  flex: 0 0 auto;
+
+  gap: 8px;
+
+  padding-top: 2px;
+}
+
+.insights-btn-outline,
+.insights-btn {
+  border-radius: 7px;
+
+  padding: 9px 13px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+}
+
+.insights-btn-outline {
+  border: 1px solid #cfe6da;
+
+  color: #2c7a5a;
+  background: #ffffff;
+}
+
+.insights-btn {
+  border: none;
+
+  color: #ffffff;
+  background: #2867df;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1100px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hr-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .side-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .estadisticas {
+    padding: 20px 14px;
+  }
+
+  .estadisticas-header {
+    flex-direction: column;
+  }
+
+  .estadisticas-actions {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hr-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .insights-banner {
+    flex-direction: column;
+  }
+
+  .insights-actions {
+    width: 100%;
+  }
+
+  .insights-btn-outline,
+  .insights-btn {
+    flex: 1;
+  }
+}
